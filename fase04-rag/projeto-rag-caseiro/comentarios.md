@@ -1,0 +1,7 @@
+Excelente — o teste de falha funcionou exatamente como esperado (a busca por vocabulário diferente e a pergunta de agregação retornaram chunks fracos/irrelevantes). Agora vou testar BM25 manual e a fusão híbrida antes de montar o notebook completo.Tudo validado: chunking, TF-IDF, BM25 manual e fusão RRF funcionam corretamente. Agora vou montar o notebook completo.End-to-end execução confirmada, funcionando exatamente como esperado (inclusive os casos de falha). Copiando para outputs.
+
+A parte principal do notebook (chunking, TF-IDF, BM25 implementado à mão, fusão híbrida RRF e os testes de falha) roda 100% offline, sem precisar de chave de API — testei o código exato do notebook de ponta a ponta aqui e os casos de falha se comportaram como previsto: a busca falhou justamente na pergunta com sinônimos e na pergunta que exige agregar informação de vários documentos.
+
+As seções 6-8 (geração com citação, embeddings densos via OpenAI, re-ranking com LLM) usam a API da Anthropic/OpenAI e precisam da sua chave para rodar — o código está pronto, mas não pude testá-lo aqui por falta de acesso à internet neste ambiente.
+
+O notebook fecha explicando por que TF-IDF/BM25 falham nesses casos e como embeddings densos resolvem um deles (sinônimos), mas não o outro (agregação multi-documento) — que é exatamente o tipo de problema que agentes com ferramenta de busca reformulável resolvem melhor, conectando direto com a Fase 5.

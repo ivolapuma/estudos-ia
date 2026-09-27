@@ -1,0 +1,5 @@
+Este notebook reimplementa exatamente o mesmo agente (calculadora + clima) usando LangGraph, com as mesmas ferramentas por baixo. O ponto central é a **seção 7**, uma tabela comparando lado a lado cada responsabilidade que você escreveu à mão no harness manual versus o que o framework assume automaticamente — geração de schema, loop, roteamento condicional, dispatcher de ferramentas, tratamento de erro, histórico de mensagens.
+
+Importante: `langgraph`/`langchain-anthropic` não estão instalados neste sandbox (sem internet para instalar), então não pude executar o código de grafo de ponta a ponta aqui — mas segue os padrões atuais e documentados do LangGraph (`StateGraph`, `add_messages`, `ToolNode`, arestas condicionais). Requer `pip install langgraph langchain-anthropic` localmente para rodar.
+
+Vale ler as notas finais: o framework não adiciona uma capacidade fundamentalmente nova, ele empacota padrões recorrentes — e por ter construído a versão manual antes, você agora sabe exatamente o que procurar se algo em LangGraph não se comportar como esperado.

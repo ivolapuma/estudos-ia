@@ -1,0 +1,7 @@
+Lógica de parsing e grading validada. Agora vou montar o notebook completo, com dataset maior, os 4-5 prompts variantes, chamadas reais à API da Anthropic (para o usuário rodar com sua própria chave) e agregação/visualização dos resultados.Válido — as aspas ficaram corretas (`item['text']` dentro de f-string com aspas duplas). Agora vou copiar para outputs e apresentar.
+
+O notebook tem um dataset de 15 recibos com gabarito, 4 variantes de prompt (zero-shot, few-shot, chain-of-thought, XML estruturado), parsing e grading separados (para distinguir erro do modelo de erro de parsing), agregação em tabela/gráfico, e um teste de consistência (mesma pergunta 3x, mede se a resposta varia).
+
+A lógica de parsing e grading foi testada e validada aqui nesta sessão com dados simulados. As chamadas reais à API não puderam ser executadas neste ambiente (sem acesso à internet), então requer `pip install anthropic` e sua `ANTHROPIC_API_KEY` configurada para rodar de fato — mas o código está pronto para isso.
+
+Vale notar a nota final do notebook: esse harness (chamar modelo → parsear → comparar com gabarito → agregar métricas) é exatamente a base do que você vai reutilizar na Fase 5 para avaliar agentes.
